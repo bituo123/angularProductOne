@@ -1,0 +1,250 @@
+// 修改SCSS导入路径 
+@import 'swiper/scss';
+@import 'swiper/scss/autoplay';
+@import 'swiper/scss/pagination';
+/* 基础布局 */
+:host {
+    display: block;
+    padding-bottom: 80px; // 留出底部安全区域 
+}
+
+.header {
+    padding: 12px 0;
+    text-align: center;
+    background: #fff;
+
+    .logo {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+    }
+
+    .title {
+        margin: 8px 0;
+        font-size: 18px;
+        color: #333;
+        .icon{
+            position: relative;
+            top: 0.3rem;
+            right: 0.2rem;
+        }
+    }
+}
+
+.search-box {
+    margin: 12px;
+    position: relative;
+ 
+    input {
+        background-color: #F2F3F2;
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        padding: 0 16px 0 40px; // 调整左右内边距 
+        font-size: 14px;
+        transition: border-color 0.3s; // 添加过渡效果 
+    }
+ 
+    .icon-search {
+        position: absolute;
+        left: 15px; // 固定左侧定位 
+        top: 60%;
+        transform: translateY(-50%);
+        color: #999;
+        pointer-events: none; // 防止图标阻挡输入 
+        font-style: normal; // 清除斜体样式 
+        
+        &::before {          // 使用伪元素实现图标 
+            content: ""; // FontAwesome搜索图标编码 
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+        }
+    }
+ 
+    // 添加聚焦态样式 
+    &:focus-within {
+        .icon-search {
+            color: #4CAF50; // 聚焦时改变图标颜色 
+        }
+        
+        input {
+            border-color: #4CAF50;
+            box-shadow: 0 0 8px rgba(76,175,80,0.3);
+        }
+    }
+}
+
+/* 轮播图 */
+.swiper {
+    $control-size: 40px;
+    height: 180px;
+    margin: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    
+    &-slide {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: none;
+        }
+    }
+    
+    .swiper-pagination {
+        bottom: 12px;
+        gap: 6px;
+    }
+}
+
+/* 商品分类 */
+.category-section {
+    margin: 16px 12px;
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+
+        h2 {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .view-all {
+            color: #53B175;
+            font-size: 13px;
+        }
+    }
+}
+
+/* 横向滚动列表 */
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    padding-top: 10px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.product-card {
+    flex: 0 0 45%;
+    margin-right: 12px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .product-image {
+        width: 100%;
+        height: 6rem;
+        object-fit: none;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .product-info {
+        padding: 8px;
+
+        .name {
+            font-size: 14px;
+            margin: 0 0 4px;
+
+        }
+
+        .weight {
+            color: #999;
+            font-size: 12px;
+            margin: 0 0 8px;
+        }
+
+        .price-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .price {
+                
+                font-weight: bold;
+            }
+
+            .add-btn {
+                width: 24px;
+                height: 24px;
+                border-radius: 20%;
+                background: #00c800;
+                color: white;
+                border: none;
+                font-size: 16px;
+                line-height: 1;
+            }
+        }
+    }
+}
+
+.product-card1 {
+    flex: 0 0 60%;
+    margin-right: 12px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .product-image {
+        width: 50%;
+        height: 6rem;
+        object-fit: none;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .product-info {
+        padding: 8px;
+        padding-right: -10px;
+
+        .name {
+            font-size: 14px;
+            margin: 0 0 4px;
+
+        }
+
+        .weight {
+            color: #999;
+            font-size: 12px;
+            margin: 0 0 8px;
+        }
+
+        .price-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .price {
+                
+                font-weight: bold;
+            }
+
+            .add-btn {
+                width: 24px;
+                height: 24px;
+                border-radius: 20%;
+                background: #00c800;
+                color: white;
+                border: none;
+                font-size: 16px;
+                line-height: 1;
+            }
+        }
+    }
+}
