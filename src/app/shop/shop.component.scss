@@ -169,6 +169,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-top: 2rem;
 
             .price {
                 
@@ -176,10 +177,10 @@
             }
 
             .add-btn {
-                width: 24px;
-                height: 24px;
-                border-radius: 20%;
-                background: #00c800;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 35%;
+                background: #53B175;
                 color: white;
                 border: none;
                 font-size: 16px;
@@ -238,8 +239,8 @@
             .add-btn {
                 width: 24px;
                 height: 24px;
-                border-radius: 20%;
-                background: #00c800;
+                border-radius: 30%;
+                background: #53B175;
                 color: white;
                 border: none;
                 font-size: 16px;
